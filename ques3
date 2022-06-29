@@ -1,0 +1,48 @@
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+
+int main() {
+	// your code goes here
+	string s;
+	cin>>s;
+	map<char,int>mp;
+	int n = s.length();
+	for(auto it : s){
+	    mp[it]++;
+	}
+// 	for(auto it : mp){
+// 	    cout<<it.first<<" "<<it.second<<"\n";
+// 	}
+	int max =0;
+	char a,b,c;
+	int x,y,z;
+	for(auto it : mp){
+	    if(max < it.second){
+	        max = it.second;
+	        a = it.first;
+	        x = it.second;
+	    }
+	}
+	max= 0;
+	for(auto it : mp){
+	    if(max < it.second && it.first!=a){
+	        max = it.second;
+	        b = it.first;
+	        y = it.second;
+	    }
+	}
+	max =0;
+	for(auto it : mp){
+	    if(max < it.second && it.first!=a && it.first != b){
+	        max = it.second;
+	        c = it.first;
+	        z = it.second;
+	    }
+	}
+	cout<<a<<" "<<x<<"\n";
+	cout<<b<<" "<<y<<"\n";
+	cout<<c<<" "<<z<<"\n";
+	
+	return 0;
+}
